@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
+
 @SpringBootTest
 @RunWith(SpringRunner.class)
 @Slf4j
@@ -27,5 +29,13 @@ public class UserMapperTest {
             order.setCloumn("column"+i);
             orderService.saveOrder(order);
         }
+    }
+
+    @Test
+    public void testSelect(){
+        Long userId = 1l;
+        Long orderId = 1l;
+        List<Order> orders = orderService.selectOrderByUserID(userId);
+        orders.forEach(t->log.info(t.toString()));
     }
 }

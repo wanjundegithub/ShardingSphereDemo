@@ -15,7 +15,11 @@
         values (#{id}, #{userId}, #{orderId}, #{cloumn})
     </insert>
 
-    <select id="selectOrdersByUserId" resultType="com.company.shardingSphere.model.Order">
+    <select id="selectOrdersByUserId" resultMap="resultMap">
         select * from t_order where `user_id`=#{userId}
+    </select>
+
+    <select id="selectAll" resultMap="resultMap">
+        select * from t_order
     </select>
 </mapper>

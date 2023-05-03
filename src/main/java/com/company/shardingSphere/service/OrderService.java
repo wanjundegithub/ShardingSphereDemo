@@ -20,4 +20,8 @@ public class OrderService {
     public List<Order> selectOrderByUserID(Long userId){
         return orderMapper.selectOrdersByUserId(userId);
     }
+
+    public List<Order> selectAll(){
+        return orderMapper.selectAll();
+    }
 }

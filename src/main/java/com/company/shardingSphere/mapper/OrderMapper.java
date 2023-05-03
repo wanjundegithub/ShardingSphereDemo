@@ -11,4 +11,6 @@ public interface OrderMapper {
     void insertOrder(Order order);
 
     List<Order> selectOrdersByUserId(@Param("userId") Long userId);
+
+    List<Order> selectAll();
 }
