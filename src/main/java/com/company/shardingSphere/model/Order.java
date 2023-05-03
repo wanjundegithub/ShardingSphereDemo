@@ -7,13 +7,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
-
+public class Order {
     private Long id;
 
-    private String name;
+    private Long userId;
 
-    private Long age;
+    private Long orderId;
 
-    private String email;
+    private String cloumn;
 }

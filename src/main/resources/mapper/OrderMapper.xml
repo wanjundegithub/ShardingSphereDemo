@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.shardingSphere.mapper.OrderMapper">
+
+    <resultMap id="resultMap" type="com.company.shardingSphere.model.Order">
+        <result column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="order_id" property="orderId"/>
+        <result column="cloumn" property="cloumn"/>
+    </resultMap>
+
+    <insert id="insertOrder" useGeneratedKeys="true" keyColumn="id" parameterType="com.company.shardingSphere.model.Order">
+        insert into `t_order` (`id`, `user_id`, `order_id`, `cloumn`)
+        values (#{id}, #{userId}, #{orderId}, #{cloumn})
+    </insert>
+
+    <select id="selectOrdersByUserId" resultType="com.company.shardingSphere.model.Order">
+        select * from `t_order` where `user_id`=#{userId}
+    </select>
+</mapper>
