@@ -10,12 +10,12 @@
         <result column="cloumn" property="cloumn"/>
     </resultMap>
 
-    <insert id="insertOrder" useGeneratedKeys="true" keyColumn="id" parameterType="com.company.shardingSphere.model.Order">
-        insert into `t_order` (`id`, `user_id`, `order_id`, `cloumn`)
+    <insert id="insertOrder"  parameterType="com.company.shardingSphere.model.Order">
+        insert into t_order1 (`id`, `user_id`, `order_id`, `cloumn`)
         values (#{id}, #{userId}, #{orderId}, #{cloumn})
     </insert>
 
     <select id="selectOrdersByUserId" resultType="com.company.shardingSphere.model.Order">
-        select * from `t_order` where `user_id`=#{userId}
+        select * from t_order1 where `user_id`=#{userId}
     </select>
 </mapper>
