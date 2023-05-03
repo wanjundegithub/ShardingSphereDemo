@@ -19,15 +19,13 @@ public class UserMapperTest {
 
     @Test
     public void testInsert(){
-//        for(int i=0;i<10;i++){
-//            Order order = new Order();
-//            order.setId((long)i);
-//            order.setUserId((long)i);
-//            order.setOrderId((long)i);
-//            order.setCloumn("column"+i);
-//            orderService.saveOrder(order);
-//        }
-        Order order = new Order(3l,3l,3l,"column3");
-        orderService.saveOrder(order);
+        for(int i=0;i<10;i++){
+            Order order = new Order();
+            order.setId((long)i);
+            order.setUserId((long)i);
+            order.setOrderId((long)i);
+            order.setCloumn("column"+i);
+            orderService.saveOrder(order);
+        }
     }
 }
